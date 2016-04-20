@@ -1,0 +1,9 @@
+.addlink{
+	margin-right: 60px;
+	font-weight: bold
+}
+
+.scrollbox{
+	height: 150px;
+	overflow: auto;
+}

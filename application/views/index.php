@@ -45,7 +45,6 @@
 				<label for="password">Password: </label>
 				<input type="password" class="form-control" name="password">
 			</div>
-			<p>* Password should be at least 8 characters.</p>
 			<div class="form-group">
 				<label for="conpassword">Confirm password: </label>
 				<input type="password" class="form-control" name="conpassword">
@@ -53,6 +52,5 @@
 			<button type="submit" class="btn btn-default">Register</button>
 		</form>
 	</div>
-	<a href="/adds">Go to the adds page</a>
 </body>
 </html>

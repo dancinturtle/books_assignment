@@ -9,7 +9,7 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-md-6 col-md-offset-8">
-			<p class="links"><a class="addlink" href="#gohome">Home</a><a class="addlink" href="#ADDLATER">Add Book and Review</a> <a href="/logins/destroy">Log off</a></p>
+			<p class="links"><a class="addlink" href="/welcome">Home</a><a class="addlink" href="/addbookpage">Add Book and Review</a> <a href="/logins/destroy">Log off</a></p>
 			</div>
 		</div>
 		<hr>
