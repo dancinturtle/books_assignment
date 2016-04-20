@@ -10,4 +10,9 @@ class Index extends CI_Controller {
 		
 		$this->load->view('index');
 	}
+
+	public function addbookpage()
+	{
+		$this->load->view('addbook');
+	}
 }
