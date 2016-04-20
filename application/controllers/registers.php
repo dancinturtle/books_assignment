@@ -32,7 +32,7 @@ class Registers extends CI_Controller {
 				'is_logged_in' => true
 				);
 			$this->session->set_userdata('info', $usersession);
-			redirect('/welcome');
+			redirect('welcome');
 		}
 		else {
 			$this->session->set_flashdata('notregistered', 'Sorry, your registration failed.');

@@ -43,7 +43,7 @@ $route['404_override'] = '';
 $route['login']="logins/check";
 $route['register']="registers/add";
 $route['welcome']="logins/signin";
-
+$route['addbookpage']="/index/addbookpage";
 
 
 /* End of file routes.php */

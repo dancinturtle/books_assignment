@@ -29,7 +29,7 @@
 				</div>
 			</div>
 			<div class="col-md-5">
-				<p><a href="/">Home</a><span class="deletereview"></span><a href="#">Log out</a></p>
+				<p><a href="/welcome">Home</a><span class="deletereview"></span><a href="/logins/destroy">Log out</a></p>
 				<form role="form" action="#" method="#">
 					<div class="form-group">
 						<label for="review">Add a Review: </label>

@@ -11,10 +11,10 @@
 				<h2>Add a New Book Title and a Review</h2>
 			</div>
 			<div class="col-md-1 col-md-offset-2">
-				<p><a href="/">Home</a></p>
+				<p><a href="welcome">Home</a></p>
 			</div>
 			<div class="col-md-1">
-				<p><a href="/">Logout</a></p>
+				<p><a href="/logins/destroy">Logout</a></p>
 			</div>
 		</div>
 

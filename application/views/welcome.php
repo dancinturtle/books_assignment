@@ -12,7 +12,7 @@
 			<h3 class="right">Welcome <?=$userinfo['alias']?></h3>
 			</div>
 			<div class="col-md-4 col-md-offset-5">
-			<p class="links"><a class="addlink" href="#ADDLATER">Add Book and Review</a> <a href="/logins/destroy">Log off</a></p>
+			<p class="links"><a class="addlink" href="/addbookpage">Add Book and Review</a> <a href="/logins/destroy">Log off</a></p>
 			</div>
 		</div>
 		<hr>
