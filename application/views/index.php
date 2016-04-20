@@ -6,8 +6,7 @@
 
 </head>
 <body>
-<?php var_dump($this->session->userdata);
- ?>
+
 	<div class="container">
 		<h3>Login</h3>
 		<p class="red"><?=$this->session->flashdata('oops'); ?></p>
