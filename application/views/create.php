@@ -1,8 +1,8 @@
 <?php 		
-	// var_dump($bookdata);
-	// $userdata = $this->session->userdata('info');
-	// var_dump($this->session->userdata);
-	// var_dump($userdata);
+	var_dump($bookdata);
+	$userdata = $this->session->userdata('info');
+	var_dump($this->session->userdata);
+	var_dump($userdata);
 ?>
 <!DOCTYPE html>
 <html>
