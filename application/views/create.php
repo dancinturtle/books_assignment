@@ -1,3 +1,9 @@
+<?php 		
+	// var_dump($bookdata);
+	// $userdata = $this->session->userdata('info');
+	// var_dump($this->session->userdata);
+	// var_dump($userdata);
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -8,29 +14,25 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-md-7">
-				<h2>Divergent</h2>
-				<h3>Author: Veronica Roth</h3>
+				<h2><?=$bookdata[0]['title']?></h2>
+				<h3>Author: <?=$bookdata[0]['name']?></h3>
 				<hr>
 				<h2>Reviews:</h2>
-				<div class="review">
-					<h4>Rating: 5 stars</h4>
-					<p><a href="#">Shirley</a> says: My daughter loves reading this. I don't know why.</p>
-					<p>Posted on November 21, 2014</p>
+				<?php foreach (array_reverse($bookdata) as $review) { ?>
+					<div class="review">
+					<h4>Rating: <?=$review['rating']?></h4>
+					<p><a href="#"><?=$review['alias']?></a> says: <?=$review['text']?></p>
+					<p>Posted on <?=$review['created_at']?></p>
+					<?php if ($review['userid'] == $userdata['id']) { ?>
+						<span class="deletereview"><a href="/destroy/<?= $review['reviewid']?>/<?=$bookdata[0]['booksid']?>">Delete this Review</a></span>
+					<?php } ?>
 				</div>
-				<div class="review">
-					<h4>Rating: 4 stars</h4>
-					<p><a href="#">David</a> says: I love the action!</p>
-					<p>Posted on October 31, 2014</p>
-				</div>
-				<div class="review">
-					<h4>Rating: 4 stars</h4>
-					<p><a href="#">Jimbo</a> says: Movie's better!</p>
-					<p>Posted on October 31, 2013<span class="deletereview"><a href="#">Delete this Review</a></span></p>
-				</div>
+				<?php } ?>
+				
 			</div>
 			<div class="col-md-5">
-				<p><a href="/welcome">Home</a><span class="deletereview"></span><a href="/logins/destroy">Log out</a></p>
-				<form role="form" action="#" method="#">
+				<p><a href="/welcome">Home</a> <a href="/logins/destroy">Log out</a></p>
+				<form role="form" action="/submissions/addreviews/<?=$bookdata[0]['booksid']?>" method="post">
 					<div class="form-group">
 						<label for="review">Add a Review: </label>
 						<input type="text" class="form-control" name="review">
