@@ -6,9 +6,9 @@ class Creates extends CI_Controller {
 		$this->load->model('submission');
 	}
 	public function index($id){
-		$bookdata = $this->submission->get_everything($id);
-		var_dump($bookdata);
-		die();
-		// $this->load->view('create', $bookdata);
+		$bookdata = array(
+			'bookdata' => $this->submission->get_everything($id)
+			);
+		$this->load->view('create', $bookdata);
 	}
 }

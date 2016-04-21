@@ -40,7 +40,22 @@ class Submissions extends CI_Controller {
 	public function addauthors(){
 
 	}
-	public function addreviews(){
+	public function addreviews($bookid){
+
+		$userinfo=$this->session->userdata('info');
+		$userid=$userinfo['id'];
+		$reviewrating= $this->input->post('rating');
+		$reviewtext=$this->input->post('review');
+		$this->submission->add_review($userid, $reviewrating, $reviewtext, $bookid);
+		redirect("/creates/$bookid");
+
+
+	}
+	public function deletereviews($reviewid,$bookid){
+		
+		$this->submission->delete_review($reviewid);
+		redirect("/creates/$bookid");
+
 
 	}
 }

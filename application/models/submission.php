@@ -33,13 +33,19 @@ class Submission extends CI_Model {
 		return $this->db->query($query, $values);
 	}
 	public function get_everything($id){
-		$query= "select books.title, authors.name, users.alias, reviews.text, reviews.rating,
-reviews.created_at, reviews.id as reviewid
+		$query= "SELECT books.title, authors.name, users.alias, reviews.text, reviews.rating,
+reviews.created_at, reviews.id as reviewid, books.id as booksid, reviews.user_id as userid
 from books
 left join authors on books.author_id=authors.id
 left join reviews on books.id=reviews.book_id
 left join users on reviews.user_id=users.id where books.id=?;";
 		$values = array($id);
 		return $this->db->query($query, $values) -> result_array();
+	}
+	public function delete_review($reviewid)
+	{
+		$query = "DELETE FROM reviews WHERE id = ?";
+		$values = array($reviewid);
+		return $this->db->query($query, $values);
 	}
 }
