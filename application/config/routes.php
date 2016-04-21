@@ -47,6 +47,8 @@ $route['addbookpage']="/index/addbookpage";
 $route['creates/(:any)']="/creates/index/$1";
 $route['submissions/addreviews/(:any)']="/submissions/addreviews/$1";
 $route['destroy/(:any)/(:any)']="/submissions/deletereviews/$1/$2";
+$route['users/(:any)']="/users/index/$1";
+
 
 
 /* End of file routes.php */

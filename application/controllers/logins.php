@@ -3,6 +3,7 @@
 class Logins extends CI_Controller {
 	public function __construct(){
 		parent:: __construct();
+		$this->load->model('submission');
 		$this->load->model('Login');
 	}
 
@@ -11,7 +12,11 @@ class Logins extends CI_Controller {
 		redirect('/');
 	}
 	public function signin(){
-		$info = array('userinfo'=>$this->session->userdata('info'));
+		$three_reviews = $this->submission->get_three_reviews();
+		$book_list = $this->submission->get_book_list();
+		$info = array('userinfo'=>$this->session->userdata('info'),'three_reviews'=> $three_reviews,'book_list' => $book_list);
+
+		// var_dump($three_reviews);
 		$this->load->view('welcome', $info);
 	}
 	public function check(){//check if the user exists
