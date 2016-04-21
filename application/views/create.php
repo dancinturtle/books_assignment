@@ -1,6 +1,6 @@
 <?php 		
 	// var_dump($bookdata);
-	// $userdata = $this->session->userdata('info');
+	$userdata = $this->session->userdata('info');
 	// var_dump($this->session->userdata);
 	// var_dump($userdata);
 ?>
@@ -20,8 +20,15 @@
 				<h2>Reviews:</h2>
 				<?php foreach (array_reverse($bookdata) as $review) { ?>
 					<div class="review">
-					<h4>Rating: <?=$review['rating']?></h4>
-					<p><a href="#"><?=$review['alias']?></a> says: <?=$review['text']?></p>
+					<h4>Rating: 
+						<?php for ($i=1; $i <= $review['rating'];  $i++) { ?>
+						<i class="fa fa-star" aria-hidden="true"></i>
+					<?php } ?>
+					<?php for ($i=5-$review['rating']; $i >0;  $i--) { ?>
+						<i class="fa fa-star-o" aria-hidden="true"></i>
+					<?php } ?>
+					</h4>
+					<p><a href="/users/<?=$review['userid']?>"><?=$review['alias']?></a> says: <?=$review['text']?></p>
 					<p>Posted on <?=$review['created_at']?></p>
 					<?php if ($review['userid'] == $userdata['id']) { ?>
 						<span class="deletereview"><a href="/destroy/<?= $review['reviewid']?>/<?=$bookdata[0]['booksid']?>">Delete this Review</a></span>

@@ -1,3 +1,6 @@
+<?php 
+var_dump($authors);
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -28,9 +31,11 @@
 				<label for="author">Choose from the list: </label>
 				<select name="author" class="form-control">
 					<option disabled selected value> -- select an option -- </option>
-					<option>Stephen King</option>
-					<option>Bill Bryson</option>
-					<option>Emily Dickinson</option>
+					<?php foreach($authors as $author){?>
+
+					<option><?= $author['name']?></option>
+					<?php  }?>
+					
 				</select>
 				<label for="authoradd">Or add a new author:</label>
 				<input type="text" class="form-control" name="authoradd">
