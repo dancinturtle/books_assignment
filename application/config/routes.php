@@ -44,7 +44,7 @@ $route['login']="logins/check";
 $route['register']="registers/add";
 $route['welcome']="logins/signin";
 $route['addbookpage']="/index/addbookpage";
-
+$route['creates/(:any)']="/creates/index/$1";
 
 /* End of file routes.php */
 /* Location: ./application/config/routes.php */
