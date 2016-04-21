@@ -18,7 +18,7 @@
 			</div>
 		</div>
 
-		<form role="form" action="/creates" method="post">
+		<form role="form" action="/submissions/divide" method="post">
 			<div class="form-group">
 				<label for="title">Book title:</label>
 				<input type="text" class="form-control" name="title">
@@ -27,6 +27,7 @@
 				<label>Author:</label>
 				<label for="author">Choose from the list: </label>
 				<select name="author" class="form-control">
+					<option disabled selected value> -- select an option -- </option>
 					<option>Stephen King</option>
 					<option>Bill Bryson</option>
 					<option>Emily Dickinson</option>
